@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hafizur Rahman — Educator &amp; Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F3EC;
+    --paper-2:#EFEAE0;
+    --navy:#152238;
+    --navy-2:#22314C;
+    --gold:#A9803F;
+    --ink:#242220;
+    --ink-soft:#5B5750;
+    --rule:#D9D2C4;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Source Serif 4', serif;
+    margin:0;
+    color:var(--navy);
+    font-weight:600;
+  }
+  a{color:var(--navy);}
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  /* HERO */
+  .hero{
+    background:var(--navy);
+    color:#EFEAE0;
+    padding:64px 0 56px;
+  }
+  .hero .wrap{
+    display:flex;
+    align-items:center;
+    gap:44px;
+    flex-wrap:wrap;
+  }
+  .hero-text{flex:1 1 320px;}
+  .eyebrow{
+    font-size:0.92rem;
+    letter-spacing:0.02em;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .hero h1{
+    color:#fff;
+    font-size:clamp(2.1rem, 5vw, 2.9rem);
+    line-height:1.15;
+  }
+  .hero .role{
+    margin-top:10px;
+    font-size:1.1rem;
+    color:#CFC8B8;
+    max-width:44ch;
+  }
+  .hero-contact{
+    margin-top:26px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    font-size:0.95rem;
+    color:#D9D2C0;
+  }
+  .hero-contact a{color:#D9D2C0; text-decoration:none; border-bottom:1px solid rgba(217,210,192,0.4);}
+  .hero-contact a:hover{border-color:var(--gold); color:#fff;}
+  .portrait-frame{
+    flex:0 0 auto;
+    width:168px;
+    height:168px;
+    border:2px solid var(--gold);
+    padding:6px;
+    border-radius:2px;
+  }
+  .portrait-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    border-radius:1px;
+  }
+
+  /* SECTIONS */
+  section{
+    padding:52px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  section:last-of-type{border-bottom:none;}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:28px;
+  }
+  .section-head .num{
+    font-family:'Source Serif 4', serif;
+    color:var(--gold);
+    font-size:1rem;
+  }
+  .section-head h2{font-size:1.5rem;}
+
+  .lede{
+    max-width:64ch;
+    color:var(--ink-soft);
+    font-size:1.04rem;
+  }
+
+  /* TIMELINE (Education) */
+  .timeline{list-style:none; margin:0; padding:0;}
+  .timeline li{
+    display:grid;
+    grid-template-columns:140px 1fr;
+    gap:24px;
+    padding:18px 0;
+    border-top:1px solid var(--rule);
+  }
+  .timeline li:first-child{border-top:none;}
+  .tl-date{
+    color:var(--gold);
+    font-size:0.92rem;
+    padding-top:2px;
+  }
+  .tl-body h3{font-size:1.08rem;}
+  .tl-body .place{color:var(--ink-soft); font-size:0.96rem; margin-top:2px;}
+  .tl-body .meta{color:var(--ink-soft); font-size:0.92rem; margin-top:6px;}
+
+  /* EXPERIENCE */
+  .exp-item h3{font-size:1.08rem;}
+  .exp-item .place{color:var(--ink-soft); font-size:0.96rem; margin-top:2px;}
+  .exp-item .dates{color:var(--gold); font-size:0.9rem; margin-top:2px;}
+  .exp-item p{margin-top:12px; color:var(--ink-soft); max-width:66ch;}
+
+  /* SKILLS */
+  .tag-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .tag{
+    border:1px solid var(--rule);
+    background:var(--paper-2);
+    padding:8px 16px;
+    font-size:0.92rem;
+    color:var(--navy-2);
+  }
+
+  /* TWO COL: activities / languages */
+  .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:36px;
+  }
+  .two-col h3{
+    font-size:1rem;
+    color:var(--navy-2);
+    margin-bottom:12px;
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:600;
+  }
+  .plain-list{list-style:none; padding:0; margin:0; color:var(--ink-soft);}
+  .plain-list li{padding:6px 0; border-top:1px solid var(--rule);}
+  .plain-list li:first-child{border-top:none;}
+
+  /* REFERENCES */
+  .ref-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  .ref-card{
+    border-left:2px solid var(--gold);
+    padding-left:18px;
+  }
+  .ref-card h3{font-size:1.02rem;}
+  .ref-card .title{color:var(--ink-soft); font-size:0.92rem; margin-top:2px;}
+  .ref-card .contact{margin-top:8px; font-size:0.9rem; color:var(--ink-soft);}
+  .ref-card .contact a{color:var(--ink-soft);}
+
+  footer{
+    padding:34px 0 44px;
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:0.88rem;
+  }
+
+  @media (max-width:640px){
+    .hero .wrap{flex-direction:column-reverse; text-align:center;}
+    .hero-contact{align-items:center;}
+    .timeline li{grid-template-columns:1fr;}
+    .two-col, .ref-grid{grid-template-columns:1fr;}
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .hero-text, .portrait-frame{
+      animation:rise 0.7s ease both;
+    }
+    .portrait-frame{animation-delay:0.12s;}
+    @keyframes rise{
+      from{opacity:0; transform:translateY(10px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+  }
+
+  :focus-visible{outline:2px solid var(--gold); outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <div class="eyebrow">Educator · Researcher · IER, University of Dhaka</div>
+      <h1>Hafizur Rahman</h1>
+      <p class="role">Graduate student in Education, currently pursuing an M.Ed at the Institute of Education and Research, University of Dhaka — with a background in classroom teaching and a focus on educational research.</p>
+      <div class="hero-contact">
+        <span>Bijoy Ekattor Hall, University of Dhaka, Dhaka‑1000</span>
+        <a href="tel:+8801516532038">+880 1516‑532038</a>
+        <a href="mailto:hafizurhimon111@gmail.com">hafizurhimon111@gmail.com</a>
+        <a href="https://www.linkedin.com/in/hafizurhimon" target="_blank" rel="noopener">linkedin.com/in/hafizurhimon</a>
+      </div>
+    </div>
+    <div class="portrait-frame">
+      <img src="profile.jpg" alt="Portrait of Hafizur Rahman">
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="about">
+    <div class="section-head"><span class="num">01</span><h2>About</h2></div>
+    <p class="lede">I am a graduate student at the Institute of Education and Research (IER), University of Dhaka, pursuing an M.Ed after completing my B.Ed with a CGPA of 3.70. My work sits at the intersection of teaching practice and educational research — shaped by an internship at the University Laboratory School and College and coursework in research methods and global perspectives on education. I am currently preparing for BPSC non‑cadre positions under the Ministry of Foreign Affairs.</p>
+  </section>
+
+  <section id="education">
+    <div class="section-head"><span class="num">02</span><h2>Education</h2></div>
+    <ul class="timeline">
+      <li>
+        <div class="tl-date">Ongoing</div>
+        <div class="tl-body">
+          <h3>Master of Education (M.Ed)</h3>
+          <div class="place">Institute of Education and Research, University of Dhaka</div>
+          <div class="meta">27th Batch, Session 2024–25 · Coursework: Education in Global Perspective, Methods and Techniques of Educational Research</div>
+        </div>
+      </li>
+      <li>
+        <div class="tl-date">2024</div>
+        <div class="tl-body">
+          <h3>Bachelor of Education (B.Ed)</h3>
+          <div class="place">Institute of Education and Research, University of Dhaka</div>
+          <div class="meta">CGPA 3.70 / 4.00</div>
+        </div>
+      </li>
+      <li>
+        <div class="tl-date">2020</div>
+        <div class="tl-body">
+          <h3>HSC — Science</h3>
+          <div class="place">Sristy College of Tangail, Tangail</div>
+          <div class="meta">GPA 5.00 / 5.00</div>
+        </div>
+      </li>
+      <li>
+        <div class="tl-date">2018</div>
+        <div class="tl-body">
+          <h3>SSC — Science</h3>
+          <div class="place">Hugra Habib Kader High School, Tangail</div>
+          <div class="meta">GPA 4.78 / 5.00</div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="experience">
+    <div class="section-head"><span class="num">03</span><h2>Experience</h2></div>
+    <div class="exp-item">
+      <h3>Intern Teacher</h3>
+      <div class="place">University Laboratory School and College, IER, University of Dhaka</div>
+      <div class="dates">03 Nov 2024 — 27 Feb 2025</div>
+      <p>Gained practical classroom experience, applying theoretical knowledge from coursework to real teaching situations under the supervision of the University Laboratory School and College.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-head"><span class="num">04</span><h2>Skills</h2></div>
+    <div class="tag-grid">
+      <span class="tag">Microsoft Word</span>
+      <span class="tag">Microsoft PowerPoint</span>
+      <span class="tag">Microsoft Excel</span>
+      <span class="tag">SPSS</span>
+    </div>
+  </section>
+
+  <section id="activities">
+    <div class="section-head"><span class="num">05</span><h2>Activities &amp; Languages</h2></div>
+    <div class="two-col">
+      <div>
+        <h3>Activities &amp; Interests</h3>
+        <ul class="plain-list">
+          <li>Former Cadet, BNCC Naval Wing, Dhaka University Contingent</li>
+          <li>Former Member, IER Debating Club</li>
+          <li>Voluntary work, teamwork, and traveling</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Languages</h3>
+        <ul class="plain-list">
+          <li>Bangla — Native</li>
+          <li>English</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="references">
+    <div class="section-head"><span class="num">06</span><h2>References</h2></div>
+    <div class="ref-grid">
+      <div class="ref-card">
+        <h3>Dr. Sheikh Tahmina Awal</h3>
+        <div class="title">Associate Professor, Institute of Education and Research, University of Dhaka</div>
+        <div class="contact">
+          <a href="mailto:stawal@du.ac.bd">stawal@du.ac.bd</a><br>
+          +880 1761‑448428
+        </div>
+      </div>
+      <div class="ref-card">
+        <h3>Zeba Farhana</h3>
+        <div class="title">Assistant Professor, Institute of Education and Research, University of Dhaka</div>
+        <div class="contact">
+          <a href="mailto:farhanazeba@du.ac.bd">farhanazeba@du.ac.bd</a><br>
+          +880 1678‑052714
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Hafizur Rahman · Built with care in Dhaka
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
